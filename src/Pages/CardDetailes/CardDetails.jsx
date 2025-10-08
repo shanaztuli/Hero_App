@@ -16,24 +16,35 @@ import {
 } from "recharts";
 import Error from "../ErrorPage/Error";
 import NotFound from "../ErrorPage/NotFound";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
+import { loadInstalledApp, updateList } from "../../utility/localStorage";
 
 const CardDetails = () => {
   const { id } = useParams();
-  const { cards, loading, error } = useCards();
-  const [install, setInstall] = useState(false);
+  const { cards, loading } = useCards();
+  // const [install, setInstall] = useState(false);
 
   const card = cards.find((c) => c.id === Number(id));
-
+  //
+  const [install, setInstall] = useState(() => {
+    const installedApps = loadInstalledApp();
+    return installedApps.some((app) => app.id === Number(id));
+  });
+  //
   if (!card) {
     return <NotFound></NotFound>;
   }
   //   console.log(id);
   const { image, downloads, ratingAvg, ratings, reviews, description } = card;
 
+  if (loading) return <LoadingSpinner></LoadingSpinner>;
+
   //rechards
 
   const handleInstall = () => {
+    updateList(card);
     setInstall(true);
+
     toast.success("✅ App installed successfully!", {
       position: "top-center",
       autoClose: 2000,

@@ -12,7 +12,7 @@ const Navbar = () => {
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
       >
-        <li className="">Home</li>
+        <li className=" font-bold ">Home</li>
       </NavLink>
       <NavLink
         to="apps"
@@ -20,7 +20,7 @@ const Navbar = () => {
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
       >
-        <li className="pl-3">Apps</li>
+        <li className="pl-3 font-bold ">Apps</li>
       </NavLink>
       <NavLink
         to="installation"
@@ -28,7 +28,7 @@ const Navbar = () => {
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
       >
-        <li className="pl-3">Installation</li>
+        <li className="pl-3 font-bold ">Installation</li>
       </NavLink>
     </>
   );
