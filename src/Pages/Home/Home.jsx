@@ -1,12 +1,13 @@
 import React from "react";
 import Banner from "../../Components/Banner";
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
 import Cards from "../../Components/Cards";
 import useCards from "../../Hooks/useCards";
 
 const Home = () => {
-  const { cards, loading, error } = useCards();
+  const { cards } = useCards();
   const trendingCards = cards.slice(0, 8);
+
   // console.log(cards);
   // console.log(data);
   return (

@@ -5,7 +5,7 @@ import useCards from "../../Hooks/useCards";
 import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 const Apps = () => {
-  const { cards, loading, error } = useCards();
+  const { cards, loading } = useCards();
 
   const [search, setSearch] = useState("");
   const [searching, setSearching] = useState(false);
