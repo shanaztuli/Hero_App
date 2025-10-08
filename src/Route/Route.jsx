@@ -18,12 +18,12 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "home",
+        path: "/home",
 
         Component: Home,
       },
       {
-        path: "apps",
+        path: "/apps",
 
         Component: Apps,
       },

@@ -7,7 +7,7 @@ const Navbar = () => {
   const links = (
     <>
       <NavLink
-        to="home"
+        to="/home"
         className={({ isActive }) =>
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
@@ -15,7 +15,7 @@ const Navbar = () => {
         <li className=" font-bold ">Home</li>
       </NavLink>
       <NavLink
-        to="apps"
+        to="/apps"
         className={({ isActive }) =>
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
@@ -23,7 +23,7 @@ const Navbar = () => {
         <li className="pl-3 font-bold ">Apps</li>
       </NavLink>
       <NavLink
-        to="installation"
+        to="/installation"
         className={({ isActive }) =>
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
@@ -61,7 +61,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link to="home">
+        <Link to="/home">
           <div className="flex gap-1">
             <img className="h-8" src={logo} alt="" />
             <h1 className=" text-xl font-bold text-[#8134eb]">HERO.IO</h1>

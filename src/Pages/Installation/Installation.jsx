@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { loadInstalledApp, removeFromLandUI } from "../../utility/localStorage";
-import { toast } from "react-toastify/unstyled";
-
+import { toast, ToastContainer } from "react-toastify";
 const Installation = () => {
   const [installed, setInstalled] = useState(() => loadInstalledApp());
 
@@ -24,7 +23,7 @@ const Installation = () => {
   const handleRemove = (id) => {
     // remove from localstorage
     removeFromLandUI(id);
-    // for ui instant update
+    // ui  update
     setInstalled((prev) => prev.filter((p) => p.id !== id));
 
     toast.info(`✅ "Your app has been uninstalled!`, {
@@ -86,6 +85,7 @@ const Installation = () => {
           </div>
         ))}
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

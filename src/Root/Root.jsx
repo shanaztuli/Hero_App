@@ -4,7 +4,6 @@ import { Outlet } from "react-router";
 import Footer from "../Components/Footer";
 import { useNavigation } from "react-router";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
-import useCards from "../Hooks/useCards";
 
 const Root = () => {
   const navigation = useNavigation();
