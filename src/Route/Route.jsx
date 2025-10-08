@@ -5,6 +5,7 @@ import About from "../Pages/Apps/Apps";
 import Installation from "../Pages/Installation/Installation";
 import Apps from "../Pages/Apps/Apps";
 import CardDetails from "../Pages/CardDetailes/CardDetails";
+import Error from "../Pages/ErrorPage/Error";
 
 export const router = createBrowserRouter([
   {
@@ -22,12 +23,12 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "/apps",
+        path: "apps",
 
         Component: Apps,
       },
       {
-        path: "/installation",
+        path: "installation",
         Component: Installation,
       },
       {
@@ -35,5 +36,9 @@ export const router = createBrowserRouter([
         Component: CardDetails,
       },
     ],
+  },
+  {
+    path: "*",
+    Component: Error,
   },
 ]);

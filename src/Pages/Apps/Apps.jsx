@@ -1,12 +1,24 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router";
+// import { useLoaderData } from "react-router";
 import Cards from "../../Components/Cards";
 import useCards from "../../Hooks/useCards";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 const Apps = () => {
   const { cards, loading, error } = useCards();
 
   const [search, setSearch] = useState("");
+  const [searching, setSearching] = useState(false);
+  //
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearch(value);
+    setSearching(true);
+
+    setTimeout(() => {
+      setSearching(false);
+    }, 400);
+  };
   //
   const updatedSearch = search.trim().toLocaleLowerCase();
   //
@@ -15,6 +27,10 @@ const Apps = () => {
         card.title.toLocaleLowerCase().includes(updatedSearch)
       )
     : cards;
+  //
+  if (loading || searching) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   //
 
   return (
@@ -34,7 +50,7 @@ const Apps = () => {
         <label className="input">
           <input
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={handleSearch}
             type="search"
             placeholder="Search Apps"
           />

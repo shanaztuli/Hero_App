@@ -14,6 +14,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import Error from "../ErrorPage/Error";
+import NotFound from "../ErrorPage/NotFound";
 
 const CardDetails = () => {
   const { id } = useParams();
@@ -21,9 +23,12 @@ const CardDetails = () => {
   const [install, setInstall] = useState(false);
 
   const card = cards.find((c) => c.id === Number(id));
+
+  if (!card) {
+    return <NotFound></NotFound>;
+  }
   //   console.log(id);
-  const { image, downloads, ratingAvg, ratings, reviews, description } =
-    card || {};
+  const { image, downloads, ratingAvg, ratings, reviews, description } = card;
 
   //rechards
 
