@@ -1,16 +1,38 @@
-# React + Vite
+# 💫 Hero.io — App Installation Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Description
+**Hero.io** is a modern React-based web application that allows users to explore, install, and manage applications locally.  
+Installed apps are saved in the browser’s **LocalStorage**, so they remain available even after page refresh.  
+Users can uninstall apps, sort them by popularity (downloads), and receive toast notifications for actions — all within a smooth, responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Features
+- 🔍 **Search & Filter:** Find apps instantly by name.  
+- ⚡ **Loading Indicators:** Smooth page and search loading experience.  
+- 💾 **LocalStorage Integration:** Save and persist installed apps.  
+- 🧹 **Uninstall Feature:** Remove apps with a single click (UI + LocalStorage update).  
+- 🔔 **Toast Notifications:** User feedback for install/uninstall actions.  
+- ↕️ **Sorting:** Sort apps by downloads (High → Low / Low → High).  
+- 📱 **Responsive Design:** Optimized for both desktop and mobile.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
+| Category | Technology |
+|-----------|-------------|
+| Frontend Framework | React.js |
+| Styling | Tailwind CSS, DaisyUI |
+| Notifications | React Toastify |
+| Charts | Recharts |
+| Routing | React Router v6 |
+| State Management | React Hooks (useState, useEffect) |
+| Data Persistence | LocalStorage |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/hero.io.git
