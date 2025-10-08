@@ -15,12 +15,12 @@ const Navbar = () => {
         <li className="">Home</li>
       </NavLink>
       <NavLink
-        to="about"
+        to="apps"
         className={({ isActive }) =>
           isActive ? "text-blue-600 border-b-2 border-blue-700" : ""
         }
       >
-        <li className="pl-3">About</li>
+        <li className="pl-3">Apps</li>
       </NavLink>
       <NavLink
         to="installation"
@@ -64,7 +64,7 @@ const Navbar = () => {
         <Link to="home">
           <div className="flex gap-1">
             <img className="h-8" src={logo} alt="" />
-            <a className=" text-xl font-bold text-[#8134eb]">HERO.IO</a>
+            <h1 className=" text-xl font-bold text-[#8134eb]">HERO.IO</h1>
           </div>
         </Link>
       </div>
