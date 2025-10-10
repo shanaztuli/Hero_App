@@ -3,11 +3,14 @@ import img1 from "../assets/icon-downloads.png";
 import img2 from "../assets/icon-ratings.png";
 import { Link } from "react-router";
 import useCards from "../Hooks/useCards";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 // import ratingImg from "../assets/icon-rating.png";
 
 const Cards = ({ card }) => {
-  const { cards, loading, error } = useCards();
-
+  const { loading } = useCards();
+  if (loading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   //   console.log(card);
   const { title, image, downloads, ratingAvg, id } = card;
   return (

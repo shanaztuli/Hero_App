@@ -2,12 +2,20 @@ import React from "react";
 import { useState } from "react";
 import { loadInstalledApp, removeFromLandUI } from "../../utility/localStorage";
 import { toast, ToastContainer } from "react-toastify";
+import useCards from "../../Hooks/useCards";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 const Installation = () => {
+  const { loading } = useCards();
   const [installed, setInstalled] = useState(() => loadInstalledApp());
 
   const [sortOrder, setSortOrder] = useState("none");
   //
-  if (!installed || installed.length === 0) return <p>No apps installed yet</p>;
+  if (!installed || installed.length === 0)
+    return (
+      <p className="text-center font-bold text-3xl my-7">
+        No apps installed yet
+      </p>
+    );
   //
   const sortedItem = (() => {
     if (sortOrder === "Downloads-ascending") {
@@ -23,7 +31,7 @@ const Installation = () => {
   const handleRemove = (id) => {
     // remove from localstorage
     removeFromLandUI(id);
-    // ui  update
+    // ui  update ar
     setInstalled((prev) => prev.filter((p) => p.id !== id));
 
     toast.info(`✅ "Your app has been uninstalled!`, {
@@ -36,6 +44,10 @@ const Installation = () => {
       theme: "colored",
     });
   };
+
+  if (loading) {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
 
   return (
     <div className="max-w-[1250px] mx-auto py-6 ">
@@ -79,7 +91,7 @@ const Installation = () => {
                 onClick={() => handleRemove(p.id)}
                 className="btn bg-green-400 text-white"
               >
-                Remove
+                Uninstall
               </button>
             </div>
           </div>

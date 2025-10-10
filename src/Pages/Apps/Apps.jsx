@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Cards from "../../Components/Cards";
 import useCards from "../../Hooks/useCards";
 import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
+import NotFound from "../ErrorPage/NotFound";
 
 const Apps = () => {
   const { cards, loading } = useCards();
@@ -59,11 +60,11 @@ const Apps = () => {
       {/* cars */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {/* cards */}
-        {searchedCards.length === 0
-          ? "No App Found"
-          : searchedCards.map((card) => (
-              <Cards key={card.id} card={card}></Cards>
-            ))}
+        {searchedCards.length === 0 ? (
+          <NotFound></NotFound>
+        ) : (
+          searchedCards.map((card) => <Cards key={card.id} card={card}></Cards>)
+        )}
         {/* {searchedCards.map((card) => (
           <Cards key={card.id} card={card}></Cards>
         ))} */}

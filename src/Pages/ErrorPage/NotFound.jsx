@@ -8,10 +8,10 @@ const NotFound = () => {
       <img className="block mx-auto" src={img} alt="" />
 
       <h2 className="text-3xl font-bold mb-2 text-center">
-        Oops, page not found!{" "}
+        Oops, App not found!{" "}
       </h2>
       <p className="text-center">
-        The page you are looking for is not available.
+        The App you are looking for is not available.
       </p>
       <div className="flex justify-center">
         <Link to="/apps">

@@ -23,7 +23,7 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-2">Services</h4>
           <ul className="space-y-1 text-sm">
-            <li>Education & Services</li>
+            <li>Apps & Services</li>
             <li>user Stories</li>
             <li>Download Apps</li>
           </ul>

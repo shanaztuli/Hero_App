@@ -26,7 +26,7 @@ export const loadInstalledApp = () => {
 //   console.log(err);
 // }
 // };
-//
+// save
 export const updateList = (card) => {
   const installed = loadInstalledApp();
   const isDuplicate = installed.some((p) => p.id === card.id);

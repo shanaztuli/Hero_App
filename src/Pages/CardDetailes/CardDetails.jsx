@@ -31,13 +31,13 @@ const CardDetails = () => {
     return installedApps.some((app) => app.id === Number(id));
   });
   //
+
   if (!card) {
     return <NotFound></NotFound>;
   }
+  if (loading) return <LoadingSpinner></LoadingSpinner>;
   //   console.log(id);
   const { image, downloads, ratingAvg, ratings, reviews, description } = card;
-
-  if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   //rechards
 
@@ -121,8 +121,8 @@ const CardDetails = () => {
           <h2 className="text-xl font-bold mb-2">Ratings</h2>
           <ResponsiveContainer width="100%" height={500}>
             <BarChart
-              data={ratings} // use the ratings array
-              layout="vertical" // bars start from left
+              data={ratings}
+              layout="vertical"
               margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
             >
               <CartesianGrid strokeDasharray="3 3" />

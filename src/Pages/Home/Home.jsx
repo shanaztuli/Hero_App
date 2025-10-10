@@ -3,10 +3,13 @@ import Banner from "../../Components/Banner";
 import { Link } from "react-router";
 import Cards from "../../Components/Cards";
 import useCards from "../../Hooks/useCards";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 const Home = () => {
-  const { cards } = useCards();
+  const { cards, loading } = useCards();
   const trendingCards = cards.slice(0, 8);
+
+  if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   // console.log(cards);
   // console.log(data);
